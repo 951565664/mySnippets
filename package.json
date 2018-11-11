@@ -8,19 +8,31 @@
         "vscode": "^1.28.0"
     },
     "categories": [
-        "Other"
+        "Snippets"
     ],
     "activationEvents": [
         "onCommand:extension.sayHello"
     ],
     "main": "./extension",
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
-            }
-        ]
+        "snippets": [
+          {
+            "language": "typescript",
+            "path": "./snippets/snippets.json"
+          },
+          {
+            "language": "javascript",
+            "path": "./snippets/snippets.json"
+          },
+          {
+            "language": "javascriptreact",
+            "path": "./snippets/snippets.json"
+          },
+          {
+            "language": "typescriptreact",
+            "path": "./snippets/snippets.json"
+          }
+        ]  
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",

@@ -1,0 +1,41 @@
+{
+	"Fairy Model": {
+		"prefix": "fairyM",
+		"body": [
+			"import { call, put, takeEvery, takeLatest, all, fork, select } from 'redux-saga/effects'",
+			"const nameSpace = '$1'",
+			"export default {",
+				"nameSpace,",
+				"state: {$2},",
+				"listenSubscription: {",
+					"setup({ dispatch, location }) {}",
+				"},",
+				"effects: {",
+					"/* $3 */",
+					"'$1/${4:query}': function*({ payload }) {$5}",
+				"},",
+				"reducers: {",
+					"'$1/fetch': (state, payload) => ({ ...state, ...payload })",
+				"}",
+			"}"
+		]
+	},
+	"Fairy Select": {
+		"prefix": "fairySelect",
+		"body": [
+			"const ${2:state} = yield select(({ $1 }) => $1) || {}"
+		]
+	},
+	"Fairy Call": {
+		"prefix": "fairyCall",
+		"body": [
+			"const ${1:result} = yield call(${2:server.}$3${4:,})"
+		]
+	},
+	"Fairy Put": {
+		"prefix": "fairyPut",
+		"body": [
+			"yield put({type: '$1/${2:fetch}',payload: { $3 }})"
+		]
+	}
+}
